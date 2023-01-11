@@ -14,7 +14,6 @@ export default async function NotePage({ params }: any) {
 
   return (
     <div>
-      <h1>notes/{note.id}</h1>
       <div className={styles.note}>
         <h2>{note.title}</h2>
         <h5>{note.field}</h5>

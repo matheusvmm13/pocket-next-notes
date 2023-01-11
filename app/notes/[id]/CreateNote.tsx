@@ -1,4 +1,5 @@
 "use client";
+import styles from './CreateNote.module.css';
 import { useState } from "react";
 
 export default function CreateNote() {
@@ -22,20 +23,25 @@ export default function CreateNote() {
   };
 
   return (
-    <form onSubmit={create}>
-      <h3>Create a new Note</h3>
-      <input
+    <form className={styles.form} onSubmit={create}>
+      <input 
+        className={styles.title}
         type="text"
         placeholder="Title"
         value={title}
         onChange={(event) => setTitle(event.target.value)}
       />
       <textarea
+        className={styles.content}
         placeholder="Content"
         value={content}
         onChange={(event) => setContent(event.target.value)}
       />
-      <button type="submit">Create note</button>
+      <button 
+        className={styles.button}
+        type="submit">
+          Take note
+      </button>
     </form>
   );
 }
